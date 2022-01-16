@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import moment from 'moment';
+import WeatherCard from './components/WeatherCard'
 
 //! https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 // ! Burlington VT -  [44.4759, -73.2121]
@@ -45,32 +45,13 @@ function App() {
 
   // console.log(weather)
 
-  const {
-    temp,
-    weather,
-  } = weatherData
+
 
   return (
     <section
       className="weather-render"
     >
-      <section className="weather-card">
-        <div
-          className="weather-day"
-        >
-          {moment().format('ddd') + " (today)"}
-        </div>
-          <img
-          className="weather-img"
-          src={`http://openweathermap.org/img/wn/${weather[0]?.icon}.png`}
-          alt={moment().format('ddd') + " - weather data"}
-        />
-        <div
-          className="weather-temp"
-        >
-          {temp + " °F"}
-        </div>
-      </section>
+      <WeatherCard weatherData={weatherData} />
     </section>
   );
 }

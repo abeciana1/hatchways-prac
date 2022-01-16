@@ -1,3 +1,27 @@
-.App {
+.weather-render {
+  display: flex;
+}
+
+.weather-day{
+  font-size: 20px;
+  font-weight: bold;
+  /* margin-top: 10px; */
+}
+
+.weather-card {
+  border: 1px solid #000;
+  min-width: 200px;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
+}
+
+.weather-img {
+  width: 75px;
+  height: 75px;
+}
+
+.weather-temp {
+  font-size: 20px;
 }

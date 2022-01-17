@@ -1,31 +1,34 @@
-import React from 'react';
+
 import moment from 'moment';
 
 
 
-const WeatherCard = ({weatherData}: any) => {
+const WeatherCard = ({ weatherData }: any) => {
 
-const {
+  const {
+    dt,
     temp,
     weather,
   } = weatherData
+
+  const date = new Date(dt * 1000)
 
     return (
       <section className="weather-card">
         <div
           className="weather-day"
         >
-          {moment().format('ddd') + " (today)"}
+          {moment(date).format('ddd')}
         </div>
           <img
           className="weather-img"
           src={`http://openweathermap.org/img/wn/${weather[0]?.icon}.png`}
-          alt={moment().format('ddd') + " - weather data"}
+          alt={moment(date).format('ddd') + " - weather data"}
         />
         <div
           className="weather-temp"
         >
-          {temp + " °F"}
+          {temp?.day + " °F / " + temp?.night}
         </div>
       </section>
     )
